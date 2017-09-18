@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gallery_titles">
+        <item>This is winter</item>
+        <item>This is spring</item>
+        <item>This is summer</item>
+        <item>This is autumn</item>
+    </string-array>
+
+    <integer-array name="gallery_res">
+        <item>@drawable/winter</item>
+        <item>@drawable/spring</item>
+        <item>@drawable/summer</item>
+        <item>@drawable/autumn</item>
+    </integer-array>
+</resources>

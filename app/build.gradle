@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "ru.mobile.agima.testproject"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    final MOXY = "1.5.3"
+    compile "com.arello-mobile:moxy:$MOXY"
+    provided "com.arello-mobile:moxy-compiler:$MOXY"
+    compile "com.arello-mobile:moxy-app-compat:$MOXY"
+
+    final BUTTERKNIFE = "8.8.1"
+    compile "com.jakewharton:butterknife:$BUTTERKNIFE"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE"
+
+    final SUPPORT_VERSION = "26.0.1"
+    compile "com.android.support:appcompat-v7:$SUPPORT_VERSION"
+    compile "com.android.support:support-v4:$SUPPORT_VERSION"
+    compile "com.android.support:design:$SUPPORT_VERSION"
+
+    compile 'com.romandanylyk:pageindicatorview:0.2.0@aar'
+    compile group: 'com.github.bumptech.glide', name: 'glide', version: '3.7.0'
+}
